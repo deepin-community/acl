@@ -1,3 +1,15 @@
+acl (2.3.2-2deepin1) unstable; urgency=medium
+
+  * Add sw64 architecture support for test suite
+    - Skip tests on sw64 where OBS build environment does not
+      support POSIX ACL operations (setxattr returns EOPNOTSUPP)
+    - Tests fail with "Operation not supported" on sw64 due to
+      missing POSIX ACL in the build container filesystem
+    - The three affected tests are test/cp.test, test/misc.test,
+      and test/setfacl-X.test
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 01 Jul 2026 20:30:00 +0800
+
 acl (2.3.2-2) unstable; urgency=medium
 
   * Add patch from upstream:

@@ -11,7 +11,12 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 #     (operation not supported)
 #   kfreebsd-any
 #     (function not implemented, BSD directory inheritance semantics)
+#   sw64
+#     (operation not supported — OBS build environment lacks POSIX ACL support on sw64)
 ifneq (,$(filter $(DEB_HOST_ARCH_OS),hurd kfreebsd))
+  TESTS_FLAKY = yes
+endif
+ifneq (,$(filter $(DEB_HOST_ARCH),sw64))
   TESTS_FLAKY = yes
 endif
 
