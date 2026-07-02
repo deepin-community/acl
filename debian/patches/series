@@ -1,9 +1,18 @@
-build-no-PATH_MAX.patch
+# CVE-2026-54369: Symlink traversal infrastructure (walk_tree + openat2)
+CVE-2026-54369.patch
+CVE-2026-54369-metadata.patch
+# CVE-2026-54370: TOCTOU hardening (getfacl, setfacl, chacl)
+CVE-2026-54370.patch
+CVE-2026-54370-metadata.patch
+# CVE-2026-54371: Metadata for symlink traversal in getfacl/setfacl/chacl
+CVE-2026-54371-metadata.patch
+# Existing Debian patches
+getfacl-fix-uninitialized-variable.patch
 build-require-autoconf-version.patch
-build-define-ENODATA.patch
 build-cross-gettext-musl.patch
+build-define-ENODATA.patch
+build-no-PATH_MAX.patch
+l10n-update-fr.patch
 man-fix-typos.patch
 man-ref-mount.patch
 man-setfacl-restore-stdin.patch
-getfacl-fix-uninitialized-variable.patch
-l10n-update-fr.patch
