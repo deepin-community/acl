@@ -2,3 +2,7 @@
 0001-libmisc-__acl_get_uid-fix-memory-wasting-loop-if-use.patch
 # Local patches
 getfacl-fix-uninitialized-variable.patch
+# CVE-2026-54369: Symlink traversal (walk_tree, openat2, _at variants)
+CVE-2026-54369.patch
+# CVE-2026-54370: TOCTOU hardening (getfacl, setfacl, chacl)
+CVE-2026-54370.patch
