@@ -6,3 +6,8 @@ getfacl-fix-uninitialized-variable.patch
 CVE-2026-54369.patch
 # CVE-2026-54370: TOCTOU hardening (getfacl, setfacl, chacl)
 CVE-2026-54370.patch
+# Fix missing AM_CONDITIONAL for UNSAFE_RESTORE_WARNINGS (needed by CVE-2026-54370.patch)
+fix-unsave-restore-warnings-conditional.patch
+# Fix missing __acl_apply_mask_to_mode.c source file (CVE-2026-54369.patch renamed
+# __apply_mask_to_mode to __acl_apply_mask_to_mode but forgot the source file)
+fix-missing-acl-apply-mask-to-mode-source.patch

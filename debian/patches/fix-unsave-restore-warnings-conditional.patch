@@ -1,0 +1,17 @@
+Description: Declare UNSAFE_RESTORE_WARNINGS conditional for automake >= 1.16.1
+  The CVE-2026-54370.patch adds a conditional block in test/Makemodule.am
+  referencing UNSAFE_RESTORE_WARNINGS. Newer automake versions (>= 1.16.1)
+  require all Makefile.am conditionals to be declared via AM_CONDITIONAL
+  in configure.ac. This patch adds the missing declaration.
+Forwarded: not-needed
+Last-Update: 2026-07-08
+---
+
+--- a/configure.ac
++++ b/configure.ac
+@@ -71,4 +71,5 @@
+ 	Makefile
+ 	po/Makefile.in
+ ])
++AM_CONDITIONAL([UNSAFE_RESTORE_WARNINGS], [false])
+ AC_OUTPUT

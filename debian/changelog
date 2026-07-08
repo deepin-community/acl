@@ -1,3 +1,23 @@
+acl (2.3.2-2deepin4) unstable; urgency=medium
+
+  * Fix incomplete function rename from CVE-2026-54369.patch:
+    - Add missing libacl/__acl_apply_mask_to_mode.c source file (renamed
+      from __apply_mask_to_mode.c)
+    - Fix remaining __apply_mask_to_mode call in libacl/perm_copy_file.c
+    - Without these fixes the build fails with "No rule to make target
+      libacl/__acl_apply_mask_to_mode.c"
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 08 Jul 2026 15:07:28 +0800
+
+acl (2.3.2-2deepin3) unstable; urgency=medium
+
+  * Fix missing AM_CONDITIONAL for UNSAFE_RESTORE_WARNINGS
+    - Add AM_CONDITIONAL([UNSAFE_RESTORE_WARNINGS], [false]) to configure.ac
+    - Required by automake >= 1.16.1 when CVE-2026-54370.patch adds
+      conditional test blocks in test/Makemodule.am
+
+ -- lichenggang <lichenggang@uniontech.com>  Wed, 08 Jul 2026 14:46:10 +0800
+
 acl (2.3.2-2deepin2) unstable; urgency=medium
 
   * Fix CVE-2026-54369: symlink traversal in libacl pathname-based functions
