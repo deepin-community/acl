@@ -27,6 +27,7 @@ override_dh_auto_test:
 ifeq ($(TESTS_FLAKY),yes)
 	@echo "Notice: Running tests in flaky mode, errors will be ignored."
 endif
+	find test -name "*.run" -exec chmod +x {} +
 	$(if $(TESTS_FLAKY),-)dh_auto_test
 
 override_dh_installchangelogs:
