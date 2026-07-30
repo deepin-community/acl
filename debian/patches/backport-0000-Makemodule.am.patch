@@ -1,0 +1,25 @@
+Description: Add fchmodat_compat.c and xattrat.c to libmisc build sources
+ These source files are needed for the symlink-safe and TOCTOU-safe
+ pathname-based ACL functions introduced by the CVE-2026-54369 and
+ CVE-2026-54370 fixes.
+Author: lichenggang <lichenggang@uniontech.com>
+Origin: https://git.savannah.nongnu.org/git/acl.git
+Last-Update: 2026-07-28
+
+Index: acl-2.3.2/libmisc/Makemodule.am
+===================================================================
+--- acl-2.3.2.orig/libmisc/Makemodule.am
++++ acl-2.3.2/libmisc/Makemodule.am
+@@ -4,6 +4,12 @@ libmisc_la_SOURCES = \
+ 	libmisc/uid_gid_lookup.c \
+ 	libmisc/high_water_alloc.c \
+ 	libmisc/next_line.c \
++	libmisc/fchmodat_compat.c \
+ 	libmisc/quote.c \
+ 	libmisc/unquote.c \
+ 	libmisc/walk_tree.c
++
++if NEED_XATTRAT
++libmisc_la_SOURCES += \
++	libmisc/xattrat.c
++endif

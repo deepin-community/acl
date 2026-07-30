@@ -2,3 +2,31 @@
 0001-libmisc-__acl_get_uid-fix-memory-wasting-loop-if-use.patch
 # Local patches
 getfacl-fix-uninitialized-variable.patch
+# Build system: add fchmodat_compat.c and xattrat.c to libmisc
+backport-0000-Makemodule.am.patch
+# CVE-2026-54369 patches
+backport-0001-CVE-2026-54369.patch
+backport-0002-CVE-2026-54369.patch
+backport-0003-CVE-2026-54369.patch
+backport-0004-CVE-2026-54369.patch
+backport-0005-CVE-2026-54369.patch
+backport-0006-CVE-2026-54369.patch
+backport-0007-CVE-2026-54369.patch
+backport-0008-CVE-2026-54369.patch
+# CVE-2026-54370 patches
+backport-0001-CVE-2026-54370.patch
+backport-0002-CVE-2026-54370.patch
+backport-0003-CVE-2026-54370.patch
+backport-0004-CVE-2026-54370.patch
+backport-0005-CVE-2026-54370.patch
+backport-0006-CVE-2026-54370.patch
+backport-0007-CVE-2026-54370.patch
+backport-0008-CVE-2026-54370.patch
+backport-0009-CVE-2026-54370.patch
+backport-0010-CVE-2026-54370.patch
+backport-0011-CVE-2026-54370.patch
+backport-0012-CVE-2026-54370.patch
+backport-0013-CVE-2026-54370.patch
+backport-0014-CVE-2026-54370.patch
+# Fix compiler warnings for CVE-2026-54369 and CVE-2026-54370
+backport-Fix-some-compiler-warnings-for-CVE-2026-54369-CVE-2026-54370.patch

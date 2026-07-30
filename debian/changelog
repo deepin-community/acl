@@ -1,3 +1,24 @@
+acl (2.3.2-2deepin2) unstable; urgency=medium
+
+  * Fix CVE-2026-54369: symlink traversal in libacl pathname-based functions
+    (acl_get_file, acl_set_file, acl_extended_file, acl_delete_def_file)
+    - Add walk_tree helper using directory file descriptors
+    - Add openat2 syscall wrapper for RESOLVE_NO_SYMLINKS
+    - Add xattrat/fchmodat syscall backwards compatibility code
+    - Add libacl _at function variants (acl_get_file_at, acl_set_file_at,
+      acl_extended_file_at, acl_delete_def_file_at)
+
+  * Fix CVE-2026-54370: TOCTOU race condition in getfacl, setfacl, chacl
+    - Harden getfacl: switch to symlink-safe functions (fstatat, acl_get_file_at)
+    - Harden setfacl: switch to symlink-safe functions (fstatat, fchmodat,
+      acl_set_file_at)
+    - Harden setfacl --restore: use openat2(RESOLVE_NO_SYMLINKS)
+    - Harden chacl: use directory file descriptors and AT_SYMLINK_NOFOLLOW
+
+  * Fix compiler warnings for CVE-2026-54369 and CVE-2026-54370
+
+ -- lichenggang <lichenggang@uniontech.com>  Tue, 28 Jul 2026 16:17:23 +0800
+
 acl (2.3.2-2deepin1) unstable; urgency=medium
 
   * Add sw64 architecture support for test suite
