@@ -23,6 +23,9 @@ endif
 %:
 	dh $@
 
+override_dh_autoreconf:
+	autoreconf -fis
+
 override_dh_auto_test:
 ifeq ($(TESTS_FLAKY),yes)
 	@echo "Notice: Running tests in flaky mode, errors will be ignored."
